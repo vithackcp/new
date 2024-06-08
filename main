@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+
+std::vector<int> increaseVector(std::vector<int> vec, int n) {
+    for (int& num : vec) {
+        num += n;
+    }
+    return vec;
+}
+
+// Тест для функции increaseVector
+void testIncreaseVector() {
+    std::vector<int> input = {1, 2, 3, 4, 5};
+    int increaseBy = 10;
+    std::vector<int> expected = {11, 12, 13, 14, 15};
+    
+    std::vector<int> result = increaseVector(input, increaseBy);
+    
+    if (result == expected) {
+        std::cout << "Test passed" << std::endl;
+    } else {
+        std::cout << "Test failed" << std::endl;
+    }
+}
+
+int main() {
+    testIncreaseVector();
+    
+    return 0;
+}
